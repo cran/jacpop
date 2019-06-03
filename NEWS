@@ -1,0 +1,11 @@
+jacpop v0.6 (Release date: 2019-06-03)
+==============
+
+Changes:
+
+* Changes to generate_pw_jaccard to output only similarity matrix.
+
+jacpop v0.5
+==============
+
+Initial release

@@ -25,7 +25,7 @@
 #'It is used for plotting purposes.
 #'@param plot_it A logical scalar. Should the first 2 principal components be plotted?
 #'@param n.pcs A numeric scalar. Number of principal components to extract from the Jaccard
-#'similarity matrix.
+#'similarity matrix. Set to NULL, if you want just the similarity matrix.
 #'
 #'@return A list of 2 elements:
 #'\itemize{
@@ -119,9 +119,13 @@ cat(ncol(geno),"SNPs left.\n")
   res<-matrix(A / (b[ind[,1]] + b[ind[,2]] - A),nrow=n,byrow=TRUE)
 #  pc.jac<-prcomp(res)$rotation[,1:n.pcs]
 ###raw PCA on centered JAC:
-	pc.jac<-svd(scale(res,scale=FALSE,center=TRUE),nu=0)[["v"]][,1:n.pcs]
+  if (!is.null(n.pcs)){
+    pc.jac<-svd(scale(res,scale=FALSE,center=TRUE),nu=0)[["v"]][,1:n.pcs]
+  }else{
+    pc.jac<-NULL
+  }
 
-  if (plot_it){
+  if (plot_it & !is.null(n.pcs)){
 	if (!is.null(pop.label)){
 		pop.label<-as.factor(pop.label)
 		plot(pc.jac[,c(1,2)],col=pop.label,main='Principal components on Jaccard matrix',xlab="PC1",ylab="PC2")

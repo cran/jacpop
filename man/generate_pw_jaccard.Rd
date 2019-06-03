@@ -4,7 +4,8 @@
 \alias{generate_pw_jaccard}
 \title{Calculate pairwise Jaccard similarity matrix}
 \usage{
-generate_pw_jaccard(geno, pop.label = NULL, n.pcs = 10, plot_it = TRUE)
+generate_pw_jaccard(geno, pop.label = NULL, n.pcs = 10,
+  plot_it = TRUE)
 }
 \arguments{
 \item{geno}{A numeric nxm matrix of genotypes. Rows are individuals and columns are variants.
@@ -16,7 +17,7 @@ a matrix produced by PLINK using the option --recodeA and removing the first row
 It is used for plotting purposes.}
 
 \item{n.pcs}{A numeric scalar. Number of principal components to extract from the Jaccard
-similarity matrix.}
+similarity matrix. Set to NULL, if you want just the similarity matrix.}
 
 \item{plot_it}{A logical scalar. Should the first 2 principal components be plotted?}
 }
@@ -79,4 +80,3 @@ geno<-matrix(scan('sample.geno'),nrow=nind,byrow=T)
 \references{
 Prokopenko, D., Hecker, J., Silverman, E., Pagano, M., Noethen, M. M., Dina, C., Lange, C., Fier, H. L. (2015). Utilizing the Jaccard index to reveal population stratification in sequencing data: A simulation study and an application to the 1000 Genomes Project. \emph{Bioinformatics}, 32, 1366-1372.
 }
-

@@ -1,4 +1,5 @@
-993f0a600ccf2c27a23b921eefa38525 *DESCRIPTION
+4844c78da4391b4e17eaca0c31d0c8d9 *DESCRIPTION
 40d41f705a244446e3eba11f89260fc7 *NAMESPACE
-c437512128e7826e2739c15442c6bf91 *R/jaccard_simple.R
-ebf8e3c98cea30fc4e686b029b7a424e *man/generate_pw_jaccard.Rd
+a234b3f75d3872d7e9a304ee49a1c92a *NEWS
+84c0b06e836a13ff48566a46cd40bdab *R/jaccard_simple.R
+dd43345e9f412ccc3b2b4bf7232e6f5f *man/generate_pw_jaccard.Rd
